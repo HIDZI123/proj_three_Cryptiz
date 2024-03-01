@@ -76,11 +76,8 @@ const ExchangeCard = ({ url, name, image, rank }) => {
         margin={"4"}
         shadow={"lg"}
         transition={"all 0.3s"}
-        css={{
-          "&:hover": {
-            transform: "scale(1.25)",
-          },
-        }}
+        _hover={{ transform: "scale(1.25)" }}
+        borderRadius={'lg'}
       >
         <Image
           src={image}

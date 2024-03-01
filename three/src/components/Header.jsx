@@ -1,6 +1,5 @@
 /* import React from 'react' */
-import { Button, Container, HStack } from "@chakra-ui/react";
-import { color } from "framer-motion";
+import { Button, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
@@ -19,7 +18,7 @@ const Header = () => {
         </Button>
 
         <Button _hover={{ color: "gold" }} color={"white"} variant={"link"}>
-          <Link to="/"> Coins</Link>
+          <Link to="/coins"> Coins</Link>
         </Button>
 
         <Button _hover={{ color: "gold" }} color={"white"} variant={"link"}>
