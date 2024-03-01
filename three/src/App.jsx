@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Exchanges from "./components/Exchanges";
-import Footer from "./components/Footer";
+/* import Footer from "./components/Footer"; */
 import Header from "./components/Header";
 const App = () => {
   return (
