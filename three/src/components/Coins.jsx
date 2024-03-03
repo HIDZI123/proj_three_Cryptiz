@@ -6,14 +6,18 @@ import { server } from "../App";
 import Error from "./Error";
 import Loader from "./Loader";
 import {
+  Button,
   Container,
   HStack,
   Heading,
   Image,
+  Radio,
+  RadioGroup,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { color } from "framer-motion";
 
 const Coins = () => {
   const [coins, SetCoins] = useState([]);
@@ -24,6 +28,14 @@ const Coins = () => {
 
   const currencySymbol =
     currency === "inr" ? "₹" : currency === "eur" ? "€" : "$";
+
+  const changePage = (page) => {
+    SetPage(page);
+    SetLoading(true);
+
+  }
+
+  const btns = new Array(132).fill(1);
 
   useEffect(() => {
     const callCoins = async () => {
@@ -41,7 +53,7 @@ const Coins = () => {
     };
 
     callCoins();
-  }, []);
+  }, [currency, page]);
 
   if (error) {
     return (
@@ -57,6 +69,15 @@ const Coins = () => {
         <Loader />
       ) : (
         <>
+          <RadioGroup onChange={SetCurrency}  value={currency} p={'4'}>
+            <HStack  m={'2'} >
+              <Radio mx={'8'} value={'inr'} > INR (₹)  </Radio>
+              <Radio mx={'8'} value={'eur'}> EUR (€) </Radio>
+              <Radio mx={'8'} value={'usd'}> USD ($) </Radio>
+            </HStack>
+          </RadioGroup>
+
+
           <HStack wrap={'wrap'} justifyContent={'space-evenly'} >
             {coins.map((i) => (
               <CoinCard
@@ -68,6 +89,21 @@ const Coins = () => {
                 price={i.current_price}
                 image={i.image}
               />
+            ))}
+          </HStack>
+
+          <HStack p={'2'} w={'full'} overflowX={'auto'}>
+            {btns.map((item, index)=> (
+                <Button 
+                key={index}
+                bgColor={'blackAlpha.800'}
+                _hover={{color : 'gold',
+                          transform: 'scale(1.2)'}}
+                color={'white'}
+                onClick={() => {changePage(index+1)}}
+                >
+                  {index + 1}
+                </Button>
             ))}
           </HStack>
         </>
