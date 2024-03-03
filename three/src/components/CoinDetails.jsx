@@ -94,8 +94,8 @@ const CoinDetails = () => {
           `${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days} `
         );
 
-        console.log(data);
-        console.log(chartData);
+/*         console.log(data);
+        console.log(chartData); */
 
         SetChartData(chartData.prices);
         SetCoins(data);
