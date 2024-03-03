@@ -7,7 +7,7 @@ const Header = () => {
       <HStack
         w={"full"}
         h={"4rem"}
-        bgColor={"blackAlpha.800"}
+        bgColor={"#03131A"}
         shadow={"base"}
         justifyContent={"space-evenly"}
         borderBottom={"1px solid gold"}

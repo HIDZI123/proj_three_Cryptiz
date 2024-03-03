@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Exchanges from "./components/Exchanges";
 import Coins from "./components/Coins";
-/* import Footer from "./components/Footer"; */
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import CoinDetails from "./components/CoinDetails";
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/coin/:id" element={<CoinDetails/>} />
           <Route path="/exchanges" element={<Exchanges />} />
         </Routes>
-      {/*   <Footer /> */}
+        <Footer />
       </Router>
     </>
   );
