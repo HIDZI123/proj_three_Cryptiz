@@ -17,7 +17,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { color } from "framer-motion";
 
 const Coins = () => {
   const [coins, SetCoins] = useState([]);
@@ -43,7 +42,7 @@ const Coins = () => {
         const { data } = await axios.get(
           `${server}/coins/markets?vs_currency=${currency}&page=${page}`
         );
-        console.log(data);
+       /*  console.log(data); */
         SetCoins(data);
         SetLoading(false);
       } catch (error) {
