@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <>
       <HStack
+        fontFamily={'Roboto'}
         w={"full"}
         h={"4rem"}
         bgColor={"#03131A"}
